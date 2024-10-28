@@ -65,6 +65,7 @@ class _SelectProfileScreenState extends State<SelectProfileScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   // Handle the Continue button action
+                  Navigator.pushNamed(context, '/donor_screen');
                   print("Selected role: $selectedRole");
                 },
                 style: ElevatedButton.styleFrom(

@@ -6,100 +6,133 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-        centerTitle: true,
-        backgroundColor: const Color(0xFF4CAF50), // Fresh green
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFFFE082), Color(0xFFFFD54F), Color(0xFFFFCA28)], // Warm yellow-orange gradient
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-        child: Center(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Icon(
-                  Icons.restaurant_menu,
+      backgroundColor: Colors.white,
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                'Login',
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
                   color: Colors.green[800],
-                  size: 80,
                 ),
-                SizedBox(height: 20),
-                Text(
-                  'Welcome to KnownBite!',
-                  style: TextStyle(
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.brown[700],
+              ),
+              SizedBox(height: 20),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Enter Your Mobile Number',
+                  contentPadding: EdgeInsets.symmetric(vertical: 14, horizontal: 12),
+                  border: OutlineInputBorder(),
+                ),
+                keyboardType: TextInputType.phone,
+              ),
+              SizedBox(height: 16),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Enter Your Password',
+                  contentPadding: EdgeInsets.symmetric(vertical: 14, horizontal: 12),
+                  border: OutlineInputBorder(),
+                ),
+                obscureText: true,
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Checkbox(value: false, onChanged: (value) {}),
+                      Text("Remember me"),
+                    ],
                   ),
-                ),
-                SizedBox(height: 20),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    labelStyle: TextStyle(color: Colors.brown[700]),
-                    filled: true,
-                    fillColor: Colors.white.withOpacity(0.9),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none,
-                    ),
-                    prefixIcon: Icon(Icons.email, color: Color(0xFF4CAF50)),
-                  ),
-                ),
-                SizedBox(height: 16),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    labelStyle: TextStyle(color: Colors.brown[700]),
-                    filled: true,
-                    fillColor: Colors.white.withOpacity(0.9),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none,
-                    ),
-                    prefixIcon: Icon(Icons.lock, color: Color(0xFF4CAF50)),
-                  ),
-                  obscureText: true,
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF8BC34A), // Green button for freshness
-                    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                  TextButton(
+                    onPressed: () {
+                      // Forgot Password functionality
+                    },
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(color: Colors.blue),
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/selectProfile');
-                  },
-                  child: Text(
-                    'Login',
-                    style: TextStyle(fontSize: 18, color: Colors.white),
-                  ),
+                ],
+              ),
+              SizedBox(height: 16),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green[700],
+                  padding: EdgeInsets.symmetric(vertical: 16),
+                  minimumSize: Size(double.infinity, 0),
                 ),
-                SizedBox(height: 10),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/signup');
-                  },
-                  child: Text(
-                    'Don’t have an account? Sign up',
-                    style: TextStyle(color: Colors.brown[700], fontWeight: FontWeight.bold),
-                  ),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/selectProfile');
+                },
+                child: Text(
+                  'Login',
+                  style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
-              ],
-            ),
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(child: Divider()),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text("or"),
+                  ),
+                  Expanded(child: Divider()),
+                ],
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      // Google sign-in functionality
+                    },
+                    child: CircleAvatar(
+                      backgroundColor: Colors.grey[200],
+                      child: Icon(Icons.g_translate, color: Colors.black),
+                    ),
+                  ),
+                  SizedBox(width: 16),
+                  GestureDetector(
+                    onTap: () {
+                      // Facebook sign-in functionality
+                    },
+                    child: CircleAvatar(
+                      backgroundColor: Colors.grey[200],
+                      child: Icon(Icons.facebook, color: Colors.black),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Don’t have an account? "),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/signup');
+                    },
+                    child: Text(
+                      "Sign Up",
+                      style: TextStyle(color: Colors.blue),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 }
+

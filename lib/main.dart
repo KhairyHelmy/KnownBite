@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_/screens/donor/donor_main.dart';
+import 'package:flutter_application_/screens/donor/make_donation.dart';
+import 'package:flutter_application_/screens/home/details.dart';
 import 'package:flutter_application_/screens/home/login.dart';
 import 'package:flutter_application_/screens/home/selectProfile.dart';
 import 'package:flutter_application_/screens/home/signup.dart';
@@ -30,6 +33,9 @@ class MyApp extends StatelessWidget {
         '/signup': (context) => const SignUpScreen(),
         '/login' : (context) => const LoginScreen(),
         '/selectProfile' : (context) => const SelectProfileScreen(),
+        '/details' : (context) => const DetailsScreen(),
+        '/donor_screen' : (context) => const DonorScreen(),
+        '/makedonation_screen' : (context) => MakeDonationScreen(),
       },
       //home: const SignUpScreen(),
     );
