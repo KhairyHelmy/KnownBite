@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_/screens/donor/rider.dart';
 
 class DonorScreen extends StatefulWidget {
   const DonorScreen({super.key});
@@ -88,12 +89,19 @@ class _DonorScreenState extends State<DonorScreen> {
 
             // My Post and Receiver Requests Tabs
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('My Donations', style: TextStyle(fontWeight: FontWeight.bold)),
-                Text('Receiver Requests', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.green[800])),
-              ],
-            ),
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('My Donations', style: TextStyle(fontWeight: FontWeight.bold)),
+              GestureDetector(
+                onTap: () => _showReceiverRequestDialog(context),
+                child: Text(
+                  'Receiver Requests',
+                  style: TextStyle(fontWeight: FontWeight.bold, color: Colors.green[800]),
+                ),
+              ),
+            ],
+          ),
+
             SizedBox(height: 16),
 
             // Create Donation Post
@@ -219,6 +227,73 @@ class _DonorScreenState extends State<DonorScreen> {
       ],
     );
   }
+}
+
+void _showReceiverRequestDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        title: Text(
+          'Receiver Requests',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                leading: Icon(Icons.group, color: Colors.blue),
+                title: Text("Receiver: NGO HelpAid"),
+                subtitle: Text("Request made for 20 meals"),
+              ),
+              Divider(),
+              ListTile(
+                leading: Icon(Icons.person, color: Colors.green),
+                title: Text("Assigned Rider: John Doe"),
+                subtitle: Text("Rider Contact: 123-456-7890"),
+              ),
+              SizedBox(height: 10), // Add space before the button
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context); // Close the dialog
+                  _navigateToRiderDetails(context); // Pass context here
+                },
+                child: Text("View Rider Details"),
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.green[600], // Text color
+                  minimumSize: Size(double.infinity, 40), // Make button full width
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(); // Close the dialog
+            },
+            child: Text(
+              "Close",
+              style: TextStyle(color: Colors.blue),
+            ),
+          ),
+        ],
+      );
+    },
+  );
+}
+
+
+void _navigateToRiderDetails(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => RiderTrackingScreen()),
+  );
 }
 
 // Placeholder pages for different roles
