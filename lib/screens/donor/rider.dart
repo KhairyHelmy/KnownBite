@@ -53,9 +53,9 @@ class _RiderTrackingScreenState extends State<RiderTrackingScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green[700],
-        title: Text('Live tracking'),
+        title: const Text('Live tracking'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -74,7 +74,7 @@ class _RiderTrackingScreenState extends State<RiderTrackingScreen> {
                       _currentLocation != null
                           ? 'Location: Lat ${_currentLocation!.latitude}, Lng ${_currentLocation!.longitude}'
                           : 'Fetching location...',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                   ),
                 ),
@@ -84,7 +84,7 @@ class _RiderTrackingScreenState extends State<RiderTrackingScreen> {
                   left: 100,
                   child: Icon(Icons.location_on, color: Colors.green[700], size: 50),
                 ),
-                Positioned(
+                const Positioned(
                   top: 200,
                   right: 100,
                   child: Icon(Icons.location_pin, color: Colors.red, size: 50),
@@ -93,7 +93,7 @@ class _RiderTrackingScreenState extends State<RiderTrackingScreen> {
             ),
           ),
           Card(
-            margin: EdgeInsets.all(8),
+            margin: const EdgeInsets.all(8),
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: Column(
@@ -104,34 +104,34 @@ class _RiderTrackingScreenState extends State<RiderTrackingScreen> {
                       backgroundColor: Colors.grey[300],
                       radius: 25,
                     ),
-                    title: Text('Ayush Pant', style: TextStyle(fontWeight: FontWeight.bold)),
-                    subtitle: Text('I am pickup volunteer'),
-                    trailing: Icon(Icons.keyboard_arrow_down),
+                    title: const Text('Ayush Pant', style: TextStyle(fontWeight: FontWeight.bold)),
+                    subtitle: const Text('I am pickup volunteer'),
+                    trailing: const Icon(Icons.keyboard_arrow_down),
                   ),
-                  SizedBox(height: 10),
-                  Text("ID Details - 324800", style: TextStyle(color: Colors.black54)),
-                  Text("Contact - 9011234560", style: TextStyle(color: Colors.black54)),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 10),
+                  const Text("ID Details - 324800", style: TextStyle(color: Colors.black54)),
+                  const Text("Contact - 9011234560", style: TextStyle(color: Colors.black54)),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         children: [
                           Icon(Icons.check_circle, color: Colors.green[700]),
-                          SizedBox(height: 4),
-                          Text("Assigned", style: TextStyle(fontSize: 12)),
-                          Text("10:00 PM", style: TextStyle(fontSize: 12, color: Colors.black54)),
+                          const SizedBox(height: 4),
+                          const Text("Assigned", style: TextStyle(fontSize: 12)),
+                          const Text("10:00 PM", style: TextStyle(fontSize: 12, color: Colors.black54)),
                         ],
                       ),
                       Column(
                         children: [
                           Icon(Icons.check_circle, color: Colors.green[700]),
-                          SizedBox(height: 4),
-                          Text("Pick Up", style: TextStyle(fontSize: 12)),
-                          Text("10:00 PM", style: TextStyle(fontSize: 12, color: Colors.black54)),
+                          const SizedBox(height: 4),
+                          const Text("Pick Up", style: TextStyle(fontSize: 12)),
+                          const Text("10:00 PM", style: TextStyle(fontSize: 12, color: Colors.black54)),
                         ],
                       ),
-                      Column(
+                      const Column(
                         children: [
                           Icon(Icons.radio_button_unchecked, color: Colors.grey),
                           SizedBox(height: 4),
@@ -141,7 +141,7 @@ class _RiderTrackingScreenState extends State<RiderTrackingScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -158,7 +158,7 @@ class _RiderTrackingScreenState extends State<RiderTrackingScreen> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green[700],
                         ),
-                        child: Text("Send message"),
+                        child: const Text("Send message"),
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -167,7 +167,7 @@ class _RiderTrackingScreenState extends State<RiderTrackingScreen> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green[700],
                         ),
-                        child: Text("+Tip"),
+                        child: const Text("+Tip"),
                       ),
                     ],
                   )

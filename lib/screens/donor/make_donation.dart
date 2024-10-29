@@ -4,6 +4,8 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class MakeDonationScreen extends StatefulWidget {
+  const MakeDonationScreen({super.key});
+
   @override
   _MakeDonationScreenState createState() => _MakeDonationScreenState();
 }
@@ -69,11 +71,11 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
     if (_formKey.currentState!.validate() && _assuranceChecked) {
       // Handle form submission logic here
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Donation listed successfully!')),
+        const SnackBar(content: Text('Donation listed successfully!')),
       );
     } else if (!_assuranceChecked) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Please assure the quality and hygiene of the food.')),
+        const SnackBar(content: Text('Please assure the quality and hygiene of the food.')),
       );
     }
   }
@@ -82,7 +84,7 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Donation Form'),
+        title: const Text('Donation Form'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -93,7 +95,7 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
             children: [
               TextFormField(
                 controller: _titleController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Add Title',
                   hintText: 'Add food title',
                 ),
@@ -105,19 +107,19 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               TextFormField(
                 controller: _descriptionController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Description',
                   hintText: 'Eg: Tomatoes from the garden',
                 ),
                 maxLines: 3,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               DropdownButtonFormField<String>(
                 value: _selectedFoodType,
-                decoration: InputDecoration(labelText: 'Type of Food'),
+                decoration: const InputDecoration(labelText: 'Type of Food'),
                 items: [
                   'Cooked Food-Veg & NonVeg',
                   'Cooked Food-Veg Only',
@@ -135,12 +137,12 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
                   });
                 },
               ),
-              SizedBox(height: 16),
-              Text(
+              const SizedBox(height: 16),
+              const Text(
                 'Food Quantity',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -155,9 +157,9 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
                             });
                           },
                         ),
-                        Expanded(child: Text('Veg')),
+                        const Expanded(child: Text('Veg')),
                         IconButton(
-                          icon: Icon(Icons.remove),
+                          icon: const Icon(Icons.remove),
                           onPressed: () {
                             setState(() {
                               if (_vegQuantity > 0) _vegQuantity--;
@@ -166,7 +168,7 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
                         ),
                         Text('$_vegQuantity'),
                         IconButton(
-                          icon: Icon(Icons.add),
+                          icon: const Icon(Icons.add),
                           onPressed: () {
                             setState(() {
                               _vegQuantity++;
@@ -187,9 +189,9 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
                             });
                           },
                         ),
-                        Expanded(child: Text('Non-Veg')),
+                        const Expanded(child: Text('Non-Veg')),
                         IconButton(
-                          icon: Icon(Icons.remove),
+                          icon: const Icon(Icons.remove),
                           onPressed: () {
                             setState(() {
                               if (_nonVegQuantity > 0) _nonVegQuantity--;
@@ -198,7 +200,7 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
                         ),
                         Text('$_nonVegQuantity'),
                         IconButton(
-                          icon: Icon(Icons.add),
+                          icon: const Icon(Icons.add),
                           onPressed: () {
                             setState(() {
                               _nonVegQuantity++;
@@ -210,9 +212,9 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
-              Text('Photos:', style: TextStyle(fontWeight: FontWeight.bold)),
-              SizedBox(height: 8),
+              const SizedBox(height: 16),
+              const Text('Photos:', style: TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 8),
               Row(
                 children: [
                   ..._selectedImages.map((image) {
@@ -232,14 +234,14 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextFormField(
                 controller: _expirationDateController,
                 decoration: InputDecoration(
                   labelText: 'Expiration Date',
                   hintText: 'Select expiration date',
                   suffixIcon: IconButton(
-                    icon: Icon(Icons.calendar_today),
+                    icon: const Icon(Icons.calendar_today),
                     onPressed: () => _selectDate(context),
                   ),
                 ),
@@ -251,14 +253,14 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextFormField(
                 controller: _expirationTimeController,
                 decoration: InputDecoration(
                   labelText: 'Expiration Time',
                   hintText: 'Select expiration time',
                   suffixIcon: IconButton(
-                    icon: Icon(Icons.access_time),
+                    icon: const Icon(Icons.access_time),
                     onPressed: () => _selectTime(context),
                   ),
                 ),
@@ -270,9 +272,9 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               CheckboxListTile(
-                title: Text('I assure that the food quality and hygiene has been maintained'),
+                title: const Text('I assure that the food quality and hygiene has been maintained'),
                 value: _assuranceChecked,
                 onChanged: (bool? value) {
                   setState(() {
@@ -281,7 +283,7 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
                 },
                 controlAffinity: ListTileControlAffinity.leading,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               
               SizedBox(
               width:double.infinity,
@@ -289,9 +291,9 @@ class _MakeDonationScreenState extends State<MakeDonationScreen> {
                 onPressed: _submitForm,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green[700],
-                  padding: EdgeInsets.symmetric(vertical: 16),
+                  padding: const EdgeInsets.symmetric(vertical: 16),
                 ),
-                child: Text('Submit', style: TextStyle(fontSize: 16)),
+                child: const Text('Submit', style: TextStyle(fontSize: 16)),
               ),
               ),
             ],

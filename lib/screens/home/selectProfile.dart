@@ -65,7 +65,7 @@ class _SelectProfileScreenState extends State<SelectProfileScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   // Handle the Continue button action
-                  Navigator.pushNamed(context, '/donor_screen');
+                  Navigator.pushNamed(context, '/details');
                   print("Selected role: $selectedRole");
                 },
                 style: ElevatedButton.styleFrom(
@@ -110,7 +110,7 @@ class _SelectProfileScreenState extends State<SelectProfileScreen> {
               color: Colors.grey.withOpacity(0.2),
               spreadRadius: 1,
               blurRadius: 5,
-              offset: Offset(0, 2), // changes position of shadow
+              offset: const Offset(0, 2), // changes position of shadow
             ),
           ],
         ),

@@ -21,8 +21,8 @@ class SignUpScreen extends StatelessWidget {
                   color: Colors.green[800],
                 ),
               ),
-              SizedBox(height: 20),
-              TextField(
+              const SizedBox(height: 20),
+              const TextField(
                 decoration: InputDecoration(
                   hintText: 'Enter Your Email',
                   contentPadding: EdgeInsets.symmetric(vertical: 14, horizontal: 12),
@@ -30,8 +30,8 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 keyboardType: TextInputType.emailAddress,
               ),
-              SizedBox(height: 16),
-              TextField(
+              const SizedBox(height: 16),
+              const TextField(
                 decoration: InputDecoration(
                   hintText: 'Enter Your Password',
                   contentPadding: EdgeInsets.symmetric(vertical: 14, horizontal: 12),
@@ -39,8 +39,8 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 16),
-              TextField(
+              const SizedBox(height: 16),
+              const TextField(
                 decoration: InputDecoration(
                   hintText: 'Confirm Your Password',
                   contentPadding: EdgeInsets.symmetric(vertical: 14, horizontal: 12),
@@ -48,22 +48,22 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green[700],
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  minimumSize: Size(double.infinity, 0),
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  minimumSize: const Size(double.infinity, 0),
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, '/selectProfile');
                 },
-                child: Text(
+                child: const Text(
                   'Sign Up',
                   style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
                Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -73,38 +73,38 @@ class SignUpScreen extends StatelessWidget {
                     },
                     child: CircleAvatar(
                       backgroundColor: Colors.grey[200],
-                      child: Icon(Icons.g_translate, color: Colors.black),
+                      child: const Icon(Icons.g_translate, color: Colors.black),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   GestureDetector(
                     onTap: () {
                       // Facebook sign-in functionality
                     },
                     child: CircleAvatar(
                       backgroundColor: Colors.grey[200],
-                      child: Icon(Icons.facebook, color: Colors.black),
+                      child: const Icon(Icons.facebook, color: Colors.black),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already have an account? "),
+                  const Text("Already have an account? "),
                   TextButton(
                     onPressed: () {
                       Navigator.pop(context, '/login');
                     },
-                    child: Text(
+                    child: const Text(
                       "Log in",
                       style: TextStyle(color: Colors.blue),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 50), // Spacing at the bottom
+              const SizedBox(height: 50), // Spacing at the bottom
             ],
           ),
         ),

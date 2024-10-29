@@ -21,8 +21,8 @@ class LoginScreen extends StatelessWidget {
                   color: Colors.green[800],
                 ),
               ),
-              SizedBox(height: 20),
-              TextField(
+              const SizedBox(height: 20),
+              const TextField(
                 decoration: InputDecoration(
                   hintText: 'Enter Your Mobile Number',
                   contentPadding: EdgeInsets.symmetric(vertical: 14, horizontal: 12),
@@ -30,8 +30,8 @@ class LoginScreen extends StatelessWidget {
                 ),
                 keyboardType: TextInputType.phone,
               ),
-              SizedBox(height: 16),
-              TextField(
+              const SizedBox(height: 16),
+              const TextField(
                 decoration: InputDecoration(
                   hintText: 'Enter Your Password',
                   contentPadding: EdgeInsets.symmetric(vertical: 14, horizontal: 12),
@@ -39,44 +39,44 @@ class LoginScreen extends StatelessWidget {
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
                       Checkbox(value: false, onChanged: (value) {}),
-                      Text("Remember me"),
+                      const Text("Remember me"),
                     ],
                   ),
                   TextButton(
                     onPressed: () {
                       // Forgot Password functionality
                     },
-                    child: Text(
+                    child: const Text(
                       "Forgot Password?",
                       style: TextStyle(color: Colors.blue),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green[700],
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  minimumSize: Size(double.infinity, 0),
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  minimumSize: const Size(double.infinity, 0),
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, '/selectProfile');
                 },
-                child: Text(
+                child: const Text(
                   'Login',
                   style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),
-              SizedBox(height: 20),
-              Row(
+              const SizedBox(height: 20),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(child: Divider()),
@@ -87,7 +87,7 @@ class LoginScreen extends StatelessWidget {
                   Expanded(child: Divider()),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -97,31 +97,31 @@ class LoginScreen extends StatelessWidget {
                     },
                     child: CircleAvatar(
                       backgroundColor: Colors.grey[200],
-                      child: Icon(Icons.g_translate, color: Colors.black),
+                      child: const Icon(Icons.g_translate, color: Colors.black),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   GestureDetector(
                     onTap: () {
                       // Facebook sign-in functionality
                     },
                     child: CircleAvatar(
                       backgroundColor: Colors.grey[200],
-                      child: Icon(Icons.facebook, color: Colors.black),
+                      child: const Icon(Icons.facebook, color: Colors.black),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Don’t have an account? "),
+                  const Text("Don’t have an account? "),
                   TextButton(
                     onPressed: () {
                       Navigator.pushNamed(context, '/signup');
                     },
-                    child: Text(
+                    child: const Text(
                       "Sign Up",
                       style: TextStyle(color: Colors.blue),
                     ),

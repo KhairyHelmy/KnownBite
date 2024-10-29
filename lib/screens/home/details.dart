@@ -24,14 +24,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 34, 139, 34), // Dark green
         elevation: 0,
-        title: Text(
+        title: const Text(
           'Donor Details',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -46,7 +46,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     });
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 16),
+                    padding: const EdgeInsets.symmetric(vertical: 16),
                     width: 80,
                     decoration: BoxDecoration(
                       color: selectedDonorType == index ? Colors.green[200] : Colors.green[100],
@@ -55,7 +55,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     child: Column(
                       children: [
                         Icon(donorTypes[index]['icon'], size: 32, color: Colors.green[800]),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Text(donorTypes[index]['label'],
                             style: TextStyle(fontSize: 12, color: selectedDonorType == index ? Colors.black : Colors.grey)),
                       ],
@@ -64,7 +64,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 );
               }),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
 
             // Show different forms based on donor type
             if (selectedDonorType == 2) // If "Individual" is selected
@@ -72,15 +72,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
             else
               _buildBusinessForm(),
 
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
 
             // Pin Location Option
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(child: Divider(color: Colors.grey)),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: EdgeInsets.symmetric(horizontal: 8),
                   child: Text('Or', style: TextStyle(color: Colors.grey)),
                 ),
                 Expanded(child: Divider(color: Colors.grey)),
@@ -89,13 +89,13 @@ class _DetailsScreenState extends State<DetailsScreen> {
             Center(
               child: TextButton(
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   'Pin Location by map',
                   style: TextStyle(color: Colors.blue),
                 ),
               ),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
 
             // Submit Button
             Center(
@@ -104,10 +104,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   Navigator.pushNamed(context, '/donor_screen');
                   },
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 64, vertical: 16),
-                  backgroundColor: Color(0xFF388E3C), // Modern green button
+                  padding: const EdgeInsets.symmetric(horizontal: 64, vertical: 16),
+                  backgroundColor: const Color(0xFF388E3C), // Modern green button
                 ),
-                child: Text('Submit', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
+                child: const Text('Submit', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
               ),
             ),
           ],
@@ -141,18 +141,18 @@ class _DetailsScreenState extends State<DetailsScreen> {
             Expanded(
               flex: 1,
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 decoration: BoxDecoration(
                   color: Colors.grey.shade200,
                   borderRadius: BorderRadius.circular(4),
                 ),
-                child: Text(
+                child: const Text(
                   '+91',
                   style: TextStyle(color: Colors.grey),
                 ),
               ),
             ),
-            SizedBox(width: 8),
+            const SizedBox(width: 8),
             Expanded(
               flex: 4,
               child: _buildTextField('Mobile Number'),
@@ -173,21 +173,21 @@ class _DetailsScreenState extends State<DetailsScreen> {
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: TextField(
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           hintText: hint,
-          hintStyle: TextStyle(color: Colors.grey),
+          hintStyle: const TextStyle(color: Colors.grey),
           filled: true,
           fillColor: Colors.grey.shade100,
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey),
+            borderSide: const BorderSide(color: Colors.grey),
             borderRadius: BorderRadius.circular(4),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey),
+            borderSide: const BorderSide(color: Colors.grey),
             borderRadius: BorderRadius.circular(4),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: const Color.fromARGB(255, 56, 142, 60)),
+            borderSide: const BorderSide(color: Color.fromARGB(255, 56, 142, 60)),
             borderRadius: BorderRadius.circular(4),
           ),
         ),

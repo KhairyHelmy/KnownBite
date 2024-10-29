@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         '/selectProfile' : (context) => const SelectProfileScreen(),
         '/details' : (context) => const DetailsScreen(),
         '/donor_screen' : (context) => const DonorScreen(),
-        '/makedonation_screen' : (context) => MakeDonationScreen(),
+        '/makedonation_screen' : (context) => const MakeDonationScreen(),
       },
       //home: const SignUpScreen(),
     );
