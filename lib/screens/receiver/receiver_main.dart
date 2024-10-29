@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_/screens/donor/rider.dart';
 
-class DonorScreen extends StatefulWidget {
-  const DonorScreen({super.key});
+class ReceiverScreen extends StatefulWidget {
+  const ReceiverScreen({super.key});
 
   @override
-  _DonorScreenState createState() => _DonorScreenState();
+  _ReceiverScreenState createState() => _ReceiverScreenState();
 }
 
-class _DonorScreenState extends State<DonorScreen> {
-  String selectedRole = 'Donor'; // Default role
+class _ReceiverScreenState extends State<ReceiverScreen> {
+  String selectedRole = 'Receiver'; // Default role
   
   @override
   Widget build(BuildContext context) {
@@ -53,20 +53,6 @@ class _DonorScreenState extends State<DonorScreen> {
                     ],
                   ),
                 ),
-                // PopupMenuButton<String>(
-                //   icon: Icon(Icons.arrow_drop_down, color: Colors.black),
-                //   onSelected: (String role) {
-                //     _navigateToRolePage(role);
-                //   },
-                //   itemBuilder: (BuildContext context) {
-                //     return ['Donor', 'Receiver', 'Volunteer'].map((String role) {
-                //       return PopupMenuItem<String>(
-                //         value: role,
-                //         child: Text(role),
-                //       );
-                //     }).toList();
-                //   },
-                // ),
               ],
             ),
             SizedBox(height: 8),
@@ -148,27 +134,6 @@ class _DonorScreenState extends State<DonorScreen> {
       // ),
     );
   }
-
-  // // Navigation based on selected role
-  // void _navigateToRolePage(String role) {
-  //   setState(() {
-  //     selectedRole = role;
-  //   });
-
-  //   Widget page;
-  //   if (role == 'Donor') {
-  //     page = DonorPage();
-  //   } else if (role == 'Receiver') {
-  //     page = ReceiverPage();
-  //   } else {
-  //     page = VolunteerPage();
-  //   }
-
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(builder: (context) => page),
-  //   );
-  // }
 
   Widget _buildStatisticColumn(String title, String value) {
     return Column(
@@ -296,31 +261,3 @@ void _navigateToRiderDetails(BuildContext context) {
   );
 }
 
-// Placeholder pages for different roles
-class DonorPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return DonorScreen();
-  }
-}
-
-
-class ReceiverPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Receiver Page")),
-      body: Center(child: Text("Welcome to Receiver Page")),
-    );
-  }
-}
-
-class VolunteerPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Volunteer Page")),
-      body: Center(child: Text("Welcome to Volunteer Page")),
-    );
-  }
-}
