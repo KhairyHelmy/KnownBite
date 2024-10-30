@@ -267,7 +267,7 @@ void _showReceiverRequestDialog(BuildContext context) {
                   backgroundColor: Colors.green[600], // Text color
                   minimumSize: const Size(double.infinity, 40), // Make button full width
                 ),
-                child: Text("View Rider Details"),
+                child: const Text("View Rider Details"),
               ),
             ],
           ),
