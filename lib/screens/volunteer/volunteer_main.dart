@@ -26,13 +26,13 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
       //   ),
       // ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // User Role and Points section with Dropdown icon
             const SizedBox(height: 35),
-            Row(
+            const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text('Hi Mandeep', style: TextStyle(color: Colors.black, fontSize: 18)),
@@ -44,20 +44,20 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                 Text.rich(
                   TextSpan(
                     text: 'You are a ',
-                    style: TextStyle(fontSize: 24, color: Colors.black),
+                    style: const TextStyle(fontSize: 24, color: Colors.black),
                     children: [
                       TextSpan(
                         text: selectedRole,
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Container(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 color: Colors.green[100],
                 borderRadius: BorderRadius.circular(8),
@@ -71,13 +71,13 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
 
             // My Post and Receiver Requests Tabs
             Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('My Donations', style: TextStyle(fontWeight: FontWeight.bold)),
+              const Text('My Donations', style: TextStyle(fontWeight: FontWeight.bold)),
               GestureDetector(
                 onTap: () => _showReceiverRequestDialog(context),
                 child: Text(
@@ -88,34 +88,34 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
             ],
           ),
 
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
 
             // Create Donation Post
             Center(
               child: Column(
                 children: [
-                  Text("Nothing till now", style: TextStyle(color: Colors.grey)),
-                  SizedBox(height: 8),
-                  Text("Do you have some food to donate?"),
-                  SizedBox(height: 16),
+                  const Text("Nothing till now", style: TextStyle(color: Colors.grey)),
+                  const SizedBox(height: 8),
+                  const Text("Do you have some food to donate?"),
+                  const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () {Navigator.pushNamed(context, '/makedonation_screen');},
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                      backgroundColor: Color(0xFF388E3C), // Modern green button
+                      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                      backgroundColor: const Color(0xFF388E3C), // Modern green button
                     ),
-                    child: Text('+ Make a donation today', style: TextStyle(color: Colors.white)),
+                    child: const Text('+ Make a donation today', style: TextStyle(color: Colors.white)),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
 
             // Donation History Section
             _buildSectionTitle('Donation History', 'View all'),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             _buildDonationHistoryItem('324800', '2 Days Ago', 'Meat', '2 Pack', 'Non Veg'),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
 
             // FAQs Section
             _buildSectionTitle('FAQs', ''),
@@ -138,9 +138,9 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
   Widget _buildStatisticColumn(String title, String value) {
     return Column(
       children: [
-        Text(title, style: TextStyle(color: Colors.grey)),
-        SizedBox(height: 4),
-        Text(value, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        Text(title, style: const TextStyle(color: Colors.grey)),
+        const SizedBox(height: 4),
+        Text(value, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
       ],
     );
   }
@@ -149,9 +149,9 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        Text(title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         if (actionText.isNotEmpty)
-          Text(actionText, style: TextStyle(color: Colors.blue)),
+          Text(actionText, style: const TextStyle(color: Colors.blue)),
       ],
     );
   }
@@ -174,8 +174,8 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
     trailing: Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Text(date, style: TextStyle(fontSize: 12, color: Colors.grey)),
-        Text('Completed', style: TextStyle(color: Colors.green)),
+        Text(date, style: const TextStyle(fontSize: 12, color: Colors.grey)),
+        const Text('Completed', style: TextStyle(color: Colors.green)),
       ],
     ),
   );
@@ -184,9 +184,9 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
   Widget _buildFaqItem(String question) {
     return ExpansionTile(
       title: Text(question),
-      children: [
+      children: const [
         Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Text('Answer goes here.'),
         ),
       ],
@@ -202,7 +202,7 @@ void _showReceiverRequestDialog(BuildContext context) {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        title: Text(
+        title: const Text(
           'Receiver Requests',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
@@ -210,29 +210,29 @@ void _showReceiverRequestDialog(BuildContext context) {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              ListTile(
+              const ListTile(
                 leading: Icon(Icons.group, color: Colors.blue),
                 title: Text("Receiver: NGO HelpAid"),
                 subtitle: Text("Request made for 20 meals"),
               ),
-              Divider(),
-              ListTile(
+              const Divider(),
+              const ListTile(
                 leading: Icon(Icons.person, color: Colors.green),
                 title: Text("Assigned Rider: John Doe"),
                 subtitle: Text("Rider Contact: 123-456-7890"),
               ),
-              SizedBox(height: 10), // Add space before the button
+              const SizedBox(height: 10), // Add space before the button
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context); // Close the dialog
                   _navigateToRiderDetails(context); // Pass context here
                 },
-                child: Text("View Rider Details"),
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
                   backgroundColor: Colors.green[600], // Text color
-                  minimumSize: Size(double.infinity, 40), // Make button full width
+                  minimumSize: const Size(double.infinity, 40), // Make button full width
                 ),
+                child: Text("View Rider Details"),
               ),
             ],
           ),
@@ -242,7 +242,7 @@ void _showReceiverRequestDialog(BuildContext context) {
             onPressed: () {
               Navigator.of(context).pop(); // Close the dialog
             },
-            child: Text(
+            child: const Text(
               "Close",
               style: TextStyle(color: Colors.blue),
             ),
@@ -256,7 +256,7 @@ void _showReceiverRequestDialog(BuildContext context) {
 void _navigateToRiderDetails(BuildContext context) {
   Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => RiderTrackingScreen()),
+    MaterialPageRoute(builder: (context) => const RiderTrackingScreen()),
   );
 }
 

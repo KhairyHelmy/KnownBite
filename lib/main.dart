@@ -30,10 +30,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: false,
       ),
-      home: MainScreen(),
+      home: const MainScreen(),
      //initialRoute: '/main_screen', //Set initial route to sign-up page
       routes: {
-        '/main_screen' : (context) => MainScreen(),
+        '/main_screen' : (context) => const MainScreen(),
         '/signup': (context) => const SignUpScreen(),
         '/login' : (context) => const LoginScreen(),
         '/selectProfile' : (context) => const SelectProfileScreen(),
